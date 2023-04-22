@@ -1,0 +1,13 @@
+.homepage{
+    position: relative;
+    min-height: 100vh;
+    background: $color-bg-light;
+
+    &__content{
+        @include absolute-center;
+
+        &-text{
+            font-size: 2rem;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.about{
+    // position: relative;
+    min-height: 100vh;
+    background: $color-bg-light;
+    &__content{
+        padding: 250px 0;
+        width: 90%;
+        max-width: 1200px;
+        margin: 50px auto;
+        // background: #fff;
+
+        &-btn-area{
+            @include flex(right,center, 16px);
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.nav-menu{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1;
+
+    ul{
+        @include flex(center,center, 1.6rem)
+    }
+
+    .nav-link{
+        color: $color-gray-dark;
+        &.active{
+            color: $color-primary;
+            font-weight: 600;
+        }
+    }
+
+    select{
+        border: none;
+        background: none;
+        color: $color-gray-dark;
+        outline: none;
+    }
+}
