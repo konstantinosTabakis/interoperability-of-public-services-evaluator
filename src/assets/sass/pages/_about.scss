@@ -10,8 +10,19 @@
         // background: #fff;
 
         &-btn-area{
-            @include flex(right,center, 16px);
+            @include flex(left,center, 16px);
             flex-wrap: wrap;
+        }
+        p{
+            font-size: 1.8rem;
+            a{
+                color: $color-primary;
+                font-weight: 600;
+            }
+            &:last-of-type{
+                font-weight: 500;
+                // color: $color-primary;
+            }
         }
     }
 }
