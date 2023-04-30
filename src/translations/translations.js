@@ -18,23 +18,43 @@ const translations= {
         },
         questions: [
             {
-                number: 1,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 1,
+                question: 'Does the Integrated Public Service produce high-value data that it makes available as open data?',
                 type: 'Not implemented'
             },
             {
-                number: 2,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 2,
+                question: 'Is the Integrated Public Service development based on open specifications?',
                 type: 'Not implemented'
             },
             {
-                number: 3,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 3,
+                question: 'Has there been consultation with companies in the field regarding the specifications?',
                 type: 'Not implemented'
             },
             {
-                number: 4,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 4,
+                question: 'Has provision been made for the systematic recording and publication of the procedures that support the Integrated Public Service?',
+                type: 'Not implemented'
+            },
+            {
+                id: 5,
+                question: 'Has it been planned to publish the interfaces of the information systems involved in the provision of Integrated Public Service?',
+                type: 'Not implemented'
+            },
+            {
+                id: 6,
+                question: 'Will new solutions or related APIs developed for them be cataloged to be accessible to third parties?',
+                type: 'Not implemented'
+            },
+            {
+                id: 7,
+                question: 'Will the Integrated Public Service leverage (reuse) existing solutions and functions that are listed in the catalogs of programming interfaces (APIs) and solutions or another relevant catalog?',
+                type: 'Not implemented'
+            },
+            {
+                id: 8,
+                question: 'As part of the creation of the Integrated Public Service, will software that is already available in catalogs (e.g. programming interfaces and solutions) or another relevant catalog be reused?',
                 type: 'Not implemented'
             },
         ]
@@ -57,23 +77,43 @@ const translations= {
         },
         questions: [
             {
-                number: 1,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 1,
+                question: 'Η ΟΔΥ παράγει δεδομένα υψηλής αξίας τα οποία διαθέτει ως ανοικτά δεδομένα;',
                 type: 'Not implemented'
             },
             {
-                number: 2,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 2,
+                question: 'Η ανάπτυξη της ΟΔΥ βασίζεται σε ανοικτές προδιαγραφές;',
                 type: 'Not implemented'
             },
             {
-                number: 3,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 3,
+                question: 'Έχει γίνει διαβούλευση με εταιρείες του χώρου αναφορικά με τις προδιαγραφές;',
                 type: 'Not implemented'
             },
             {
-                number: 4,
-                question: 'Lorem ipsum dolor sit amet consectetur.',
+                id: 4,
+                question: 'Έχει προβλεφθεί η συστηματική αποτύπωση και δημοσίευση των διαδικασιών που υποστηρίζουν την ΟΔΥ;',
+                type: 'Not implemented'
+            },
+            {
+                id: 5,
+                question: 'Έχει προβλεφθεί η δημοσίευση των διεπαφών των πληροφοριακών συστημάτων που εμπλέκονται στην παροχή της ΟΔΥ;',
+                type: 'Not implemented'
+            },
+            {
+                id: 6,
+                question: 'Οι νέες λύσεις ή οι σχετικές προγραμματιστικές διεπαφές που θα αναπτυχθούν για αυτές θα είναι καταχωρημένες σε καταλόγους για να είναι προσβάσιμες και σε τρίτους φορείς;',
+                type: 'Not implemented'
+            },
+            {
+                id: 7,
+                question: 'Η ΟΔΥ θα αξιοποιεί (επαναχρησιμοποιεί) υφιστάμενες λύσεις και λειτουργίες που είναι καταχωρημένες στους καταλόγους προγραμματιστικών διεπαφών (APIs) και λύσεων ή σε άλλο σχετικό κατάλογο;',
+                type: 'Not implemented'
+            },
+            {
+                id: 8,
+                question: 'Στο πλαίσιο της δημιουργίας της ΟΔΥ θα επαναχρησιμοποιηθεί λογισμικό το οποίο είναι ήδη διαθέσιμο σε καταλόγους (π.χ. προγραμματιστικών διεπαφών και λύσεων) ή σε άλλο σχετικό κατάλογο;',
                 type: 'Not implemented'
             },
         ]

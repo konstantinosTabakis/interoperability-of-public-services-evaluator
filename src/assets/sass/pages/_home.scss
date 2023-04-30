@@ -1,7 +1,5 @@
 .homepage{
-    position: relative;
-    min-height: 100vh;
-    background: $color-bg-light;
+    @include outer-container;
 
     &__content{
         @include absolute-center;

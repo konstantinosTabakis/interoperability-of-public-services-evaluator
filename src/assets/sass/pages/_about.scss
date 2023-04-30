@@ -1,12 +1,10 @@
 .about{
-    // position: relative;
-    min-height: 100vh;
-    background: $color-bg-light;
+    @include outer-container;
     &__content{
         padding: 250px 0;
         width: 90%;
         max-width: 1200px;
-        margin: 50px auto;
+        margin: 0px auto;
         // background: #fff;
 
         &-btn-area{

@@ -1,0 +1,44 @@
+.rating {
+    @include flex(space-around,center,5px);
+    flex-wrap: wrap;
+    margin: 30px 0 40px;
+  }
+  
+  .rating li{
+    list-style: none;
+    position: relative;
+    background: #ECECEC;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    transition: 0.3s;
+    font-weight: 600;
+    box-shadow: $shadow-primary;
+  }
+  .rating li label {
+    @include absolute-center;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    @include flex(center, center);
+    border: 1px #000 solid;
+  }
+  .rating li:hover,
+  .num-display {
+    background: $color-primary;
+    color: #fff;
+  }
+  
+  [type='radio'] {
+    opacity: 0;
+  }
+  
+  [type='radio']:checked ~ label {
+    background: $color-primary;
+    color: #fff;
+  }
