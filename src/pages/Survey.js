@@ -13,7 +13,7 @@ function Survey() {
 
     useEffect(() => {
         setDisplayQuestions(questions.filter((el) => el.id <= currentPage * questionsPerPage && el.id > (currentPage - 1) * questionsPerPage))
-    }, [questions, currentPage])
+    }, [questions, currentPage, questionsPerPage])
 
     const handleSubmit = () => {
         if (results.length === questions.length) {
@@ -35,9 +35,6 @@ function Survey() {
             alert('answer all questions')
         }
     }
-
-
-
 
     return (
         <div className="survey">

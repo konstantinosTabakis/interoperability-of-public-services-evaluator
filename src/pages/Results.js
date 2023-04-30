@@ -19,6 +19,7 @@ function Results() {
             setTotal(percentage)
             setLevel(level)
         }
+        // eslint-disable-next-line
     }, [results])
 
     useEffect(()=>{
@@ -27,6 +28,7 @@ function Results() {
           } else {
             setIsInitialRender(false);
           }
+          // eslint-disable-next-line
     },[maturityLevels])
 
 
@@ -78,10 +80,10 @@ function Results() {
                     <p className="mg-b-small">{content.results_help_link_text} <a className="pdf" href={pdf} download="Π3_Οδηγός_Εφαρμογής_v1.2.pdf">{content.results_help_link}.</a></p>
                     <h4 className="mg-b-tiny">{content.results_help_subtitle}</h4>
                     <div className="tools">
-                        <a href="https://www.w3.org/WAI/ER/tools/" target="_blank">Web Accessibility Evaluation Tools List</a>
-                        <a href="https://www.w3.org/developers/tools/" target="_blank">Developer Tools</a>
-                        <a href="https://validator.w3.org/" target="_blank">Markup Validator</a>
-                        <a href="http://www.w3c.gr/wai/translations/wcag20.html" target="_blank">Web Content Accessibility Guidelines</a>
+                        <a href="https://www.w3.org/WAI/ER/tools/" target="_blank" rel="noreferrer">Web Accessibility Evaluation Tools List</a>
+                        <a href="https://www.w3.org/developers/tools/" target="_blank" rel="noreferrer">Developer Tools</a>
+                        <a href="https://validator.w3.org/" target="_blank" rel="noreferrer">Markup Validator</a>
+                        <a href="http://www.w3c.gr/wai/translations/wcag20.html" target="_blank" rel="noreferrer">Web Content Accessibility Guidelines</a>
 
                     </div>
                 </div>

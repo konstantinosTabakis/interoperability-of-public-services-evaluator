@@ -112,6 +112,21 @@
   background: #DBA39A;
   color: #fff; }
 
+.rating li span {
+  display: none;
+  position: absolute;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 150%; }
+
+.rating li:hover span,
+[type='radio']:checked ~ span {
+  display: block;
+  color: #3b3b3b; }
+
 .arrow-circle {
   width: 300px;
   height: 300px;

@@ -42,3 +42,17 @@
     background: $color-primary;
     color: #fff;
   }
+
+  .rating li span {
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    @include absolute-center;
+    top: 150%;
+}
+.rating li:hover span,
+[type='radio']:checked~span {
+  display: block;
+  color: $color-gray-dark;
+}
+ 
