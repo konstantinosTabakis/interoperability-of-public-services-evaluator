@@ -1,11 +1,11 @@
 .homepage{
-    position: relative;
-    min-height: 100vh;
-    background: $color-bg-light;
+    @include outer-container;
 
-    &__content{
+    &__content{  
         @include absolute-center;
-
+        z-index:10;
+        width: 90%;
+        max-width: 760px;
         &-text{
             font-size: 2rem;
         }

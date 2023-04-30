@@ -8,7 +8,8 @@ function Menu() {
 
     const {dispatch, content} = useContext(SurveyContext)
     const handleChange= (e)=>{
-        dispatch({type: 'SET_LANGUAGE', language: e.target.value, content: translations[e.target.value].content, questions: translations[e.target.value].questions  })
+        document.documentElement.setAttribute("lang", e.target.value);
+        dispatch({type: 'SET_LANGUAGE', language: e.target.value, content: translations[e.target.value].content, questions: translations[e.target.value].questions, maturityLevels : translations[e.target.value].maturityLevels  })
     }
 
     return (

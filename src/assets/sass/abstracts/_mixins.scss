@@ -4,6 +4,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@mixin outer-container {
+    position: relative;
+    min-height: 100vh;
+    background: $color-bg-light;
+}
 
 @mixin flex($justify: center,$align: center, $gap: 0){
     display: flex;

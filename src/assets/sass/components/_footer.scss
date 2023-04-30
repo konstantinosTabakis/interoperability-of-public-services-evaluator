@@ -1,6 +1,5 @@
 .footer{
     position: absolute;
-    // height: 20vh;
     height: 170px;
     width: 100%;
     background-repeat: no-repeat;
@@ -10,16 +9,4 @@
 .footer{
     bottom: 0;
     background-position: top;
-
-    p{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 5px;
-        font-size: 1rem;
-        a{
-            color: $color-primary;
-            font-weight: 600;
-        }
-    }
 }

@@ -26,6 +26,18 @@
 .centered{
     text-align: center;
 }
+.copyrights{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+    font-size: 1rem;
+    z-index: 9;
+    a{
+        color: $color-primary;
+        font-weight: 600;
+    }
+}
 
 .mg-b-tiny{
     margin-bottom: 0.8rem;
