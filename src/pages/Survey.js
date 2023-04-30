@@ -3,8 +3,10 @@ import SurveyContext from "../context/SurveyContext"
 // import Input from "../components/Input"
 import InputList from "../components/InputList"
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs"
+import { useNavigate } from "react-router-dom"
 
 function Survey() {
+    const navigate= useNavigate()
     const { questions, numberOfPages, questionsPerPage, results } = useContext(SurveyContext)
 
     const [currentPage, setCurrentPage] = useState(1)
@@ -16,7 +18,7 @@ function Survey() {
 
     const handleSubmit = () => {
         if (results.length === questions.length) {
-            alert('Submit')
+            navigate('/results')
         } else {
             alert('answer all questions')
         }
@@ -49,6 +51,11 @@ function Survey() {
                     {/* {questions.map((el) => (
                         <Input key={el.id} item={el} />
                     ))} */}
+                    {currentPage === numberOfPages && 
+                        <div className="btn-area mg-t-medium">
+                            <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

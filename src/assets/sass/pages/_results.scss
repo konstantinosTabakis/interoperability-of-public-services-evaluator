@@ -1,0 +1,32 @@
+.results{
+    @include outer-container;
+    &__container{
+        padding: 3.2rem;
+
+        &-card{
+            width: 90%;
+            max-width: 800px;
+            background: $color-white;
+            padding: 3.2rem;
+            margin: 0 auto 30px;
+            border-radius: 12px;
+            box-shadow: $shadow-secondary;
+
+            .data{
+                @include flex(space-between, center,50px);
+                flex-direction: row-reverse;
+                .total {
+                    border: 2px solid $color-primary;
+                    border-radius: 50%;
+                    padding: 50px;
+                    text-align: center;
+                    font-size: 3.2rem;
+                    font-weight: 500;
+                    color: $color-primary;
+                    min-width: 30%;
+                }
+            
+            }
+        }
+    }
+}

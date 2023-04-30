@@ -13,12 +13,17 @@
         padding: 3.2rem;
 
         &-inner{
+            width: 90%;
             max-width: 1120px;
-            background: $color-white;
+            // background: $color-white;
             padding: 3.2rem;
             margin: 0 auto 30px;
             border-radius: 12px;
-            box-shadow: $shadow-secondary;
+            // box-shadow: $shadow-secondary;
+        }
+
+        .btn-area{
+            text-align: end;
         }
     }
 }
