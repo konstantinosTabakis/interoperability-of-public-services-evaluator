@@ -5,8 +5,7 @@
         width: 90%;
         max-width: 1200px;
         margin: 0px auto;
-        // background: #fff;
-
+        
         &-btn-area{
             @include flex(left,center, 16px);
             flex-wrap: wrap;

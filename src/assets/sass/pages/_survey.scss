@@ -1,28 +1,33 @@
-.survey{
+.survey {
     @include outer-container;
     overflow-x: hidden;
 
-    h2{
+    h2 {
         color: $color-primary;
     }
 
-    &__container{
-        
-
-        // background: red;
+    &__container {
         padding: 3.2rem;
 
-        &-inner{
-            width: 90%;
+        &-inner {
+            width: 85%;
             max-width: 1120px;
             // background: $color-white;
-            padding: 3.2rem;
+            padding: 0 3.2rem;
             margin: 0 auto 30px;
             border-radius: 12px;
-            // box-shadow: $shadow-secondary;
+            position: relative;
+            z-index: 10;
+
+            .container-question:nth-child(odd){
+                animation: fadiInLeft .8s ease-in-out;
+            }
+            .container-question:nth-child(even){
+                animation: fadiInRight .8s ease-in-out;
+            }
         }
 
-        .btn-area{
+        .btn-area {
             text-align: end;
         }
     }

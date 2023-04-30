@@ -1,13 +1,12 @@
 import { useContext, useEffect, useState } from "react"
 import SurveyContext from "../context/SurveyContext"
-// import Input from "../components/Input"
 import InputList from "../components/InputList"
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs"
 import { useNavigate } from "react-router-dom"
 
 function Survey() {
     const navigate= useNavigate()
-    const { questions, numberOfPages, questionsPerPage, results } = useContext(SurveyContext)
+    const { questions, numberOfPages, questionsPerPage, results, content } = useContext(SurveyContext)
 
     const [currentPage, setCurrentPage] = useState(1)
     const [displayQuestions, setDisplayQuestions] = useState([])
@@ -45,7 +44,7 @@ function Survey() {
             <div className="arrow-circle left" onClick={previousPage}  > <button><BsChevronLeft tabIndex={0} /></button>  </div>
             <div className="arrow-circle right" onClick={nextPage}  > <button><BsChevronRight tabIndex={0} /></button>  </div>
             <div className="survey__container">
-                <h2 className="heading-primary centered mg-b-big mg-t-huge">Interoperability of Public Services Evaluator</h2>
+                <h2 className="heading-primary centered mg-b-big mg-t-huge">{content.survey_title} </h2>
                 <div className="survey__container-inner">
                     <InputList questions={displayQuestions} />
                     {/* {questions.map((el) => (
@@ -53,7 +52,7 @@ function Survey() {
                     ))} */}
                     {currentPage === numberOfPages && 
                         <div className="btn-area mg-t-medium">
-                            <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+                            <button className="btn btn-primary" onClick={handleSubmit}>{content.survey_cta}</button>
                         </div>
                     }
                 </div>

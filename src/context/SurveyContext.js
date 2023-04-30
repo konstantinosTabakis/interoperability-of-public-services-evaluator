@@ -12,6 +12,7 @@ export const SurveyProvider = ({ children }) => {
         language: 'en',
         content: translations.en.content,
         questions: translations.en.questions,
+        maturityLevels: translations.en.maturityLevels,
         numberOfPages:Math.ceil(translations.en.questions.length/questionsPerPage),
         questionsPerPage: questionsPerPage,
         results: []

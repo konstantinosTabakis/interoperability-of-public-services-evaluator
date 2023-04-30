@@ -1,8 +1,8 @@
-const translations= {
-    en:{
-        content:{
-            menu_home:'Home',
-            menu_survey:'Survey',
+const translations = {
+    en: {
+        content: {
+            menu_home: 'Home',
+            menu_survey: 'Survey',
             menu_about: 'About',
             homepage_title: 'Interoperability of Public Services Evaluator',
             homepage_text: 'The interoperability evaluator is a self assessment tool that provides an easy and fast way to understand the level of interoperability of a public service.',
@@ -14,7 +14,17 @@ const translations= {
             about_par4: 'Thanks for stopping by!',
             about_btn1: 'Home',
             about_btn2: 'Start Survey',
+            survey_title: 'Interoperability of Public Services Evaluator',
+            survey_cta: 'Submit',
+            results_label: 'Total',
+            results_title: 'Results',
+            results_level: 'Maturity level:',
+            results_help_title: 'Recommended Resources',
+            results_help_link_text: 'Download the New Greek Interoperability Framework',
+            results_help_link: 'here',
+            results_help_subtitle: 'Also these are some recommended tools for developers',
 
+            
         },
         questions: [
             {
@@ -57,12 +67,34 @@ const translations= {
                 question: 'As part of the creation of the Integrated Public Service, will software that is already available in catalogs (e.g. programming interfaces and solutions) or another relevant catalog be reused?',
                 type: 'Not implemented'
             },
+        ],
+        maturityLevels: [
+            {
+                level: 1,
+                response: 'Poor interoperability – the digital public service cannot be considered interoperable.'
+            },
+            {
+                level: 2,
+                response: 'Fair interoperability – the digital public service implements some elements of interoperability best practices.'
+            },
+            {
+                level: 3,
+                response: 'Essential interoperability – the digital public service implements the essential best practices for interoperability.'
+            },
+            {
+                level: 4,
+                response: 'Good interoperability – all relevant interoperability best practices are implemented by the digital public service.'
+            },
+            {
+                level: 5,
+                response: 'Interoperability leading practice – the digital public service is a leading interoperability practice example for others.'
+            },
         ]
     },
-    el:{
-        content:{
-            menu_home:'Αρχική',
-            menu_survey:'Έρευνα',
+    el: {
+        content: {
+            menu_home: 'Αρχική',
+            menu_survey: 'Έρευνα',
             menu_about: 'Σχετικά',
             homepage_title: 'Αξιολογητής Διαλειτουργικότητας Δημοσίων Υπηρεσιών',
             homepage_text: 'Ο αξιολογητής διαλειτουργικότητας είναι ένα εργαλείο αυτοαξιολόγησης που παρέχει έναν εύκολο και γρήγορο τρόπο κατανόησης του επιπέδου διαλειτουργικότητας μιας δημόσιας υπηρεσίας.',
@@ -74,6 +106,15 @@ const translations= {
             about_par4: 'Ευχαριστώ που περάσατε!',
             about_btn1: 'Αρχική',
             about_btn2: 'Έναρξη έρευνας',
+            survey_title: 'Αξιολογητής Διαλειτουργικότητας Δημοσίων Υπηρεσιών',
+            survey_cta: 'Υποβολή',
+            results_label: 'Σύνολο',
+            results_title: 'Αποτελέσματα',
+            results_level: 'Επίπεδο οριμότητας:',
+            results_help_title: 'Προτεινόμενες Πηγές',
+            results_help_link_text: 'Κατεβάστε το νέο Εθνικό Πλαίσιο Διαλειτουργικότητας',
+            results_help_link: 'εδώ',
+            results_help_subtitle: 'Επιπλέον προτεινόμενα εργαλεία για προγραμματιστές',
         },
         questions: [
             {
@@ -115,6 +156,28 @@ const translations= {
                 id: 8,
                 question: 'Στο πλαίσιο της δημιουργίας της ΟΔΥ θα επαναχρησιμοποιηθεί λογισμικό το οποίο είναι ήδη διαθέσιμο σε καταλόγους (π.χ. προγραμματιστικών διεπαφών και λύσεων) ή σε άλλο σχετικό κατάλογο;',
                 type: 'Not implemented'
+            },
+        ],
+        maturityLevels: [
+            {
+                level: 1,
+                response: 'Κακή διαλειτουργικότητα – η ψηφιακή δημόσια υπηρεσία δεν μπορεί να θεωρηθεί διαλειτουργική.'
+            },
+            {
+                level: 2,
+                response: 'Δίκαιη διαλειτουργικότητα – η ψηφιακή δημόσια υπηρεσία εφαρμόζει ορισμένα στοιχεία βέλτιστων πρακτικών διαλειτουργικότητας.'
+            },
+            {
+                level: 3,
+                response: 'Βασική διαλειτουργικότητα – η ψηφιακή δημόσια υπηρεσία εφαρμόζει τις βασικές βέλτιστες πρακτικές για τη διαλειτουργικότητα.'
+            },
+            {
+                level: 4,
+                response: 'Καλή διαλειτουργικότητα – όλες οι σχετικές βέλτιστες πρακτικές διαλειτουργικότητας εφαρμόζονται από την ψηφιακή δημόσια υπηρεσία.'
+            },
+            {
+                level: 5,
+                response: 'Κορυφαία πρακτική διαλειτουργικότητας – η ψηφιακή δημόσια υπηρεσία είναι ένα κορυφαίο παράδειγμα πρακτικής διαλειτουργικότητας για άλλους.'
             },
         ]
     }

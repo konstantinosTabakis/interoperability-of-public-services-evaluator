@@ -12,7 +12,8 @@ const SurveyReducer = (state, action) => {
                 ...state,
                 language: action.language,
                 content: action.content,
-                questions: action.questions
+                questions: action.questions,
+                maturityLevels: action.maturityLevels
             }
         case 'ADD_RESULT':
             return {

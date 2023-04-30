@@ -1,45 +1,43 @@
 import { useContext, useEffect, useState } from "react"
 import SurveyContext from "../context/SurveyContext"
+import DonutChart from "../components/DonutChart"
+import pdf from "../data/ΕΠΔ.pdf"
+import { useNavigate } from "react-router-dom"
 function Results() {
 
-    const { results } = useContext(SurveyContext)
+    const navigate= useNavigate()
+    const { results, content, maturityLevels } = useContext(SurveyContext)
     const [total, setTotal] = useState(0)
     const [level, setLevel] = useState({})
+    const [isInitialRender, setIsInitialRender] = useState(true);
 
     useEffect(() => {
-        const {percentage, level}= calcResults(results.map(element => element.result))
-        console.log(percentage);
-        console.log(level);
-        setTotal(percentage)
-        setLevel(level)
+        if(results.length===0){
+            navigate('/survey')
+        }else{
+            const {percentage, level}= calcResults(results.map(element => element.result))
+            setTotal(percentage)
+            setLevel(level)
+        }
     }, [results])
 
-    const maturityLevels = [
-        {
-            level: 1,
-            response: 'Poor interoperability – the digital public service cannot be considered interoperable'
-        },
-        {
-            level: 2,
-            response: 'Fair interoperability – the digital public service implements some elements of interoperability best practices'
-        },
-        {
-            level: 3,
-            response: 'Essential interoperability – the digital public service implements the essential best practices for interoperability'
-        },
-        {
-            level: 4,
-            response: 'Good interoperability – all relevant interoperability best practices are implemented by the digital public service'
-        },
-        {
-            level: 5,
-            response: 'Interoperability leading practice – the digital public service is a leading interoperability practice example for others'
-        },
-    ]
+    useEffect(()=>{
+        if (!isInitialRender) {
+            setLevel(calcMaturity(total));
+          } else {
+            setIsInitialRender(false);
+          }
+    },[maturityLevels])
+
 
     const calcResults = (results) => {
         const total = results.reduce((accumulator, currentValue) => accumulator + currentValue) * 20
         const percentage= Math.floor(total / results.length)
+        
+        return { percentage , level : calcMaturity(percentage) }
+    }
+
+    const calcMaturity=(percentage)=>{
         let level
         if (percentage < 20) {
             level = maturityLevels[0]
@@ -52,41 +50,39 @@ function Results() {
         } else {
             level = maturityLevels[4]
         }
-        return { percentage , level }
-    }
-
-    const getLevel = (total) => {
-        console.log(total);
-
-        if (total < 20) {
-            console.log(maturityLevels[0]);
-            return maturityLevels[0]
-        } else if (total < 40) {
-            return maturityLevels[1]
-        } else if (total < 60) {
-            return maturityLevels[2]
-        } else if (total < 80) {
-            return maturityLevels[3]
-        } else {
-            return maturityLevels[4]
-        }
+        return level
     }
 
     return (
         <div className='results'>
             <div className="results__container">
-                <div className="results__container-card mg-t-huge">
-                    <div className="data">
+                <div className="results__container-card mg-t-huge mg-b-big">
+                    <div className="data mg-b-medium">
                         <div>
-                            <h2 className="heading-primary mg-b-small "> Results</h2>
-                            <h4> Maturity level {level.level}</h4>
+                            <h2 className="heading-primary mg-b-small "> {content.results_title}</h2>
+                            <h4> {content.results_level} <span>{level.level}</span> </h4>
                             <p>{level.response}</p>
                         </div>
                         <div className="total">
                             <div className="total-inner">
-                                Total <br /> {total}%
+                            {content.results_label} <br /> {total}%
                             </div>
                         </div>
+                    </div>
+                    <div className="chart">
+                        <DonutChart total={total} />
+                    </div>
+                </div>
+                <div className="results__container-help">
+                    <h3 className="mg-b-tiny">{content.results_help_title}</h3>
+                    <p className="mg-b-small">{content.results_help_link_text} <a className="pdf" href={pdf} download="Π3_Οδηγός_Εφαρμογής_v1.2.pdf">{content.results_help_link}.</a></p>
+                    <h4 className="mg-b-tiny">{content.results_help_subtitle}</h4>
+                    <div className="tools">
+                        <a href="https://www.w3.org/WAI/ER/tools/" target="_blank">Web Accessibility Evaluation Tools List</a>
+                        <a href="https://www.w3.org/developers/tools/" target="_blank">Developer Tools</a>
+                        <a href="https://validator.w3.org/" target="_blank">Markup Validator</a>
+                        <a href="http://www.w3c.gr/wai/translations/wcag20.html" target="_blank">Web Content Accessibility Guidelines</a>
+
                     </div>
                 </div>
             </div>

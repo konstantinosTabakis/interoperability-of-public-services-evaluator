@@ -1,0 +1,180 @@
+// min-width
+@media screen and (min-width: 2000px) {
+    .footer {
+        height: 300px;
+    }
+
+    .header {
+        height: 210px;
+    }
+
+    .about {
+        &__content {
+            padding: 350px 0;
+        }
+    }
+}
+
+
+// max-width
+@media screen and (max-width: 1350px) {
+    .arrow-circle {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 50%;
+    }
+
+    .arrow-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .arrow-circle.left {
+        left: -130px;
+
+        svg {
+            right: 30px;
+        }
+    }
+
+    .arrow-circle.right {
+        right: -130px;
+
+        svg {
+            left: 30px;
+        }
+    }
+
+    .results {
+        &__container {
+            padding: 3.2rem 1rem;
+
+            &-card {
+                padding: 2.4rem;
+
+                .data {
+                    gap: 20px;
+
+                    .total {
+                        min-width: 175px;
+                    }
+                }
+
+                .chart {
+                    canvas {
+                        width: 400px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 40%;
+    }
+
+    .footer {
+        height: 100px;
+    }
+
+    .header {
+        height: 110px;
+    }
+
+    .about {
+        &__content {
+            padding: 180px 0;
+        }
+    }
+
+    .btn {
+        padding: 1.6rem 4.6rem;
+        min-width: 150px;
+    }
+
+    .arrow-circle {
+        width: 180px;
+        height: 180px;
+
+        svg {
+            width: 40px;
+            height: 30px;
+        }
+    }
+
+    .arrow-circle.left {
+        left: -130px;
+
+        svg {
+            right: 20px;
+        }
+    }
+
+    .arrow-circle.right {
+        right: -130px;
+
+        svg {
+            left: 20px;
+        }
+    }
+
+    .mg-b-big {
+        margin-bottom: 6rem;
+    }
+
+    .mg-b-huge {
+        margin-bottom: 8rem;
+    }
+
+    .rating li {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+    }
+
+    .rating li label {
+        @include absolute-center;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        @include flex(center, center);
+        border: 1px $color-black solid;
+    }
+
+    .results {
+        &__container {
+            padding: 3.2rem 1rem;
+
+            &-card {
+                padding: 2.4rem;
+
+                .data {
+                    gap: 20px;
+                    flex-direction: column;
+
+                    .total {
+                        min-width: 175px;
+                    }
+                }
+
+                .chart {
+                    canvas {
+                        width: 400px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+}

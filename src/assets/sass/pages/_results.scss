@@ -8,7 +8,7 @@
             max-width: 800px;
             background: $color-white;
             padding: 3.2rem;
-            margin: 0 auto 30px;
+            margin: 0 auto ;
             border-radius: 12px;
             box-shadow: $shadow-secondary;
 
@@ -25,7 +25,50 @@
                     color: $color-primary;
                     min-width: 30%;
                 }
+                h4{
+                    font-size: 2rem;
+                }
+                span{
+                    color: $color-primary;
+                    font-weight: 700;
+                    // font-size: 2rem;
+                }
             
+            }
+            .chart{
+                canvas{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+
+        &-help{
+            width: 90%;
+            max-width: 800px;
+            background: $color-white;
+            padding: 3.2rem;
+            margin: 0 auto ;
+            border-radius: 12px;
+            box-shadow: $shadow-secondary;
+
+            .pdf{
+                color: $color-primary;
+                font-weight: 500;
+            }
+            .tools{
+                @include flex(left,center,15px);
+                flex-wrap: wrap;
+                // display: block;
+
+                a{
+                    background-color: $color-bg-light;
+                    // background: rgb(241, 241, 241);
+                    padding: 5px 15px;
+                    border-radius: 8px;
+                    color: $color-primary;
+                    box-shadow: $shadow-secondary;
+                }
             }
         }
     }
