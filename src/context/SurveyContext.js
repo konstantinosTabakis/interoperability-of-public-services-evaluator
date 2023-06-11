@@ -6,15 +6,17 @@ const SurveyContext= createContext()
 
 export const SurveyProvider = ({ children }) => {
 
-    const questionsPerPage= 5
 
     const initialState = {
         language: 'en',
         content: translations.en.content,
-        questions: translations.en.questions,
         maturityLevels: translations.en.maturityLevels,
-        numberOfPages:Math.ceil(translations.en.questions.length/questionsPerPage),
-        questionsPerPage: questionsPerPage,
+        survey: null,
+        surveyLabel: null,
+        questions: [],
+        // numberOfPages:Math.ceil(translations.en.questions.length/questionsPerPage),
+        numberOfPages: null,
+        questionsPerPage: parseInt(process.env.REACT_APP_QUESTIONS_PER_PAGE),
         results: []
     }
 

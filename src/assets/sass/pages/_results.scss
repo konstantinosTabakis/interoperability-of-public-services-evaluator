@@ -71,5 +71,20 @@
                 }
             }
         }
+
+        .requirements{
+
+            &__inner{
+                max-height: 700px;
+                overflow-y: auto;
+
+                .green{
+                    color: #4BB543;
+                }
+                .red{
+                    color: #D0342C;
+                }
+            }
+        }
     }
 }

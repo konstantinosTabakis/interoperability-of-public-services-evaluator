@@ -1,10 +1,10 @@
 import Input from './Input'
 
-function InputList({ questions }) {
+function InputList({ questions, currentPage }) {
     return (
         <>
-            {questions.map((el) => (
-                <Input key={el.id} item={el} />
+            {questions.map((el,index) => (
+                <Input key={index} item={el} currentPage={currentPage} index={index} />
             ))}
         </>
     )
