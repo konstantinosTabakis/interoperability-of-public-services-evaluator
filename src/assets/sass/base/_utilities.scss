@@ -26,6 +26,9 @@
 .centered{
     text-align: center;
 }
+.w-100 {
+    width: 100%;
+}
 .copyrights{
     position: absolute;
     left: 50%;
@@ -37,6 +40,26 @@
         color: $color-primary;
         font-weight: 600;
     }
+}
+
+.input-basic {
+    border: none;
+    background: #f7f7f7;
+    box-shadow: $shadow-secondary;
+    border-radius: 8px;
+    padding: 1rem;
+    outline: none;
+    color: #777;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+.card{
+    background: $color-white;
+    border-radius: 12px;
+    padding: 3.2rem;
+    box-shadow: $shadow-secondary;
+    max-width: 600px;
 }
 
 .mg-b-tiny{

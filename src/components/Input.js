@@ -1,32 +1,35 @@
 import { useState, useEffect, useContext } from "react";
 import SurveyContext from "../context/SurveyContext";
 
-function Input({ item }) {
+function Input({ item, currentPage, index }) {
 
     const [selected, setSelected] = useState(-1)
     const {results,content, dispatch} = useContext(SurveyContext)
+    const [id, setId]= useState(null)
 
     useEffect(() => {
-        const test = results.filter((el) => el.id === item.id)
+        const itmID= ((currentPage-1)*parseInt(process.env.REACT_APP_QUESTIONS_PER_PAGE)) + (index+1)
+        setId(itmID)
+        const test = results.filter((el) => el.id === itmID)
         setSelected(test.length > 0 ? test[0].result : -1)
         // eslint-disable-next-line
-    }, [])
+    }, [currentPage])
 
     const handleChange = (e) => {
-        console.log(+e.target.value);
-        const type = results.filter((itm)=>itm.id ===item.id).length === 0? 'ADD_RESULT' : 'EDIT_RESULTS'
+        const type = results.filter((itm)=>itm.question ===id).length === 0? 'ADD_RESULT' : 'EDIT_RESULTS'
 
         dispatch({type: type, payload: {
-            id: item.id,
+            id: id,
+            question: item.question,
+            requirements: item.requirements,
             // category: item.category,
             result: +e.target.value
         } }) 
         setSelected(+e.target.value)
     }
     return (
-        <div className='container-question'>
-            <h3> {item.id}{')'} {item.question}</h3>
-            {/* <p> {item.example}</p> */}
+        <div className='container-question mg-b-big'>
+            <h3> {id}{')'} {item.question}</h3>
             <ul className="rating">
                 <li>
                     <input type="radio" name={`question-${item.id}`} id={`question-${item.id}-num0`} value='0' checked={selected === 0} onChange={handleChange} />
