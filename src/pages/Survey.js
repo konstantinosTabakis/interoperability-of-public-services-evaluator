@@ -18,6 +18,7 @@ function Survey() {
     useEffect(() => {
         // if(currentPage>0) setDisplayQuestions(questions.filter((el) => el.id <= currentPage * questionsPerPage && el.id > (currentPage - 1) * questionsPerPage))
         if(currentPage>0) setDisplayQuestions(questions.filter((el,index) => index +1 <= currentPage * questionsPerPage && index +1 > (currentPage - 1) * questionsPerPage))
+        // eslint-disable-next-line
     }, [currentPage])
 
     useEffect(() => {
@@ -27,6 +28,7 @@ function Survey() {
             setSurveys(surveys)
         }
         fetchSurveys()
+        // eslint-disable-next-line
     }, [])
 
     const handleChangeSelected = (e) =>{
@@ -34,7 +36,7 @@ function Survey() {
     }
 
     const handleSurveySelection = ()=>{
-        const survey = surveys.filter((el)=> el.id == selectedSurvey)[0]
+        const survey = surveys.filter((el)=> el.id === selectedSurvey)[0]
         dispatch({
             type: 'SET_SURVEY', 
             name: survey.name,
