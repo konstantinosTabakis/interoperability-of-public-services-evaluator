@@ -9,7 +9,6 @@ function Input({ item, currentPage, index }) {
 
     useEffect(() => {
         const itmID= ((currentPage-1)*parseInt(process.env.REACT_APP_QUESTIONS_PER_PAGE)) + (index+1)
-        console.log(itmID);
         setId(itmID)
         const test = results.filter((el) => el.id === itmID)
         setSelected(test.length > 0 ? test[0].result : -1)

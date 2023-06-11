@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react"
 import SurveyContext from "../context/SurveyContext"
-import DonutChart from "../components/DonutChart"
+// import DonutChart from "../components/DonutChart"
+import { createEvaluation } from "../data/db/db-services"
 import pdf from "../data/ΕΠΔ.pdf"
 import { useNavigate } from "react-router-dom"
 function Results() {
 
     const navigate = useNavigate()
-    const { results, content, maturityLevels } = useContext(SurveyContext)
+    const { results, content, maturityLevels, surveyLabel,survey, dispatch } = useContext(SurveyContext)
     const [total, setTotal] = useState(0)
     const [level, setLevel] = useState({})
     const [isInitialRender, setIsInitialRender] = useState(true);
@@ -16,11 +17,12 @@ function Results() {
             navigate('/survey')
         } else {
             const { percentage, level } = calcResults(results.map(element => element.result))
+            createEvaluation({survey, surveyLabel, percentage, level})
             setTotal(percentage)
             setLevel(level)
         }
         // eslint-disable-next-line
-    }, [results])
+    }, [])
 
     useEffect(() => {
         if (!isInitialRender) {
@@ -55,6 +57,13 @@ function Results() {
         return level
     }
 
+    const handleReset = ()=>{
+        dispatch({
+            type: 'RESET_SURVEY'
+        })
+        navigate('/survey')
+    }
+
     return (
         <div className='results'>
             <div className="results__container">
@@ -75,7 +84,7 @@ function Results() {
                         <DonutChart total={total} />
                     </div> */}
                     <div className="">
-                        <button className="btn btn-primary w-100">Try again</button>
+                        <button className="btn btn-primary w-100"  onClick={handleReset}>Try New Survey</button>
                     </div>
                 </div>
                 <div className="results__container-help mg-b-big requirements">

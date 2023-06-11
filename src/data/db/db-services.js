@@ -3,14 +3,14 @@ import { db } from "./firebase.config";
 import {
     collection,
     getDocs,
-    writeBatch,
-    getDoc,
+    // writeBatch,
+    // getDoc,
     addDoc,
-    updateDoc,
-    deleteDoc,
-    doc,
-    setDoc,
-    getCountFromServer,
+    // updateDoc,
+    // deleteDoc,
+    // doc,
+    // setDoc,
+    // getCountFromServer,
     serverTimestamp
 } from "firebase/firestore";
 
@@ -25,4 +25,11 @@ export const getAllSurveys = async () => {
         return { id: surveyId, ...surveyData }
     });
     return surveys;
+}
+
+export const createEvaluation = async (results) => {
+    const coll = collection(db, 'evaluations');
+    const created_at = await serverTimestamp()
+
+    return await addDoc(coll, {...results, created_at});
 }
