@@ -49,6 +49,7 @@ function Survey() {
     const handleSubmit = () => {
         if (results.length === questions.length) {
             navigate('/results')
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
             alert('answer all questions')
         }
@@ -58,6 +59,7 @@ function Survey() {
         if (currentPage > 1) setCurrentPage(currentPage - 1)
     }
     const nextPage = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         if (currentPage === numberOfPages) {
             handleSubmit()
         } else if (results.length >= currentPage * questionsPerPage) {

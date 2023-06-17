@@ -16,6 +16,7 @@ const translations = {
             about_btn2: 'Start Survey',
             survey_title: 'Interoperability of Public Services Evaluator',
             survey_label:['Never','Slightly','A bit','Average','A lot','Totally'],
+            // survey_label:['No answer','Not at all','Partially','Moderately','Quite','Fully'],
             survey_cta: 'Submit',
             results_label: 'Total',
             results_title: 'Results',
