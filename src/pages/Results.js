@@ -7,20 +7,30 @@ import { useNavigate } from "react-router-dom"
 function Results() {
 
     const navigate = useNavigate()
-    const { results, content, maturityLevels, surveyLabel,survey, dispatch } = useContext(SurveyContext)
+    const { results, content, maturityLevels, surveyLabel,survey, identification, dispatch } = useContext(SurveyContext)
     const [total, setTotal] = useState(0)
     const [level, setLevel] = useState({})
     const [isInitialRender, setIsInitialRender] = useState(true);
+    const [results_final, setResults_final] = useState([]);
 
     useEffect(() => {
-        if (results.length === 0) {
-            navigate('/survey')
-        } else {
-            const { percentage, level } = calcResults(results.map(element => element.result))
-            createEvaluation({survey, surveyLabel, percentage, level})
-            setTotal(percentage)
-            setLevel(level)
+        const manageResults = async () => {
+            if (results.length === 0) {
+                navigate('/survey')
+            } else {
+                const { percentage, level } = calcResults(results.map(element => element.result))
+                setTotal(percentage)
+                setLevel(level)
+                await createEvaluation({survey, surveyLabel, percentage, level , identification})
+                setResults_final(results)
+                dispatch({
+                    type: 'RESET_SURVEY'
+                })
+            }
+
         }
+        manageResults()
+
         // eslint-disable-next-line
     }, [])
 
@@ -90,7 +100,7 @@ function Results() {
                 <div className="results__container-help mg-b-big requirements">
                     <h3 className="mg-b-tiny">Requirements</h3>
                     <div className="requirements__inner">
-                        {results.map((el, index) => (
+                        {results_final.map((el, index) => (
                             el.requirements.length > 0 ? (
                                 <div className="mg-b-medium" key={index}>
                                     <h4 className={el.result >= 4 ? "green" : "red"}>{el.question}</h4>

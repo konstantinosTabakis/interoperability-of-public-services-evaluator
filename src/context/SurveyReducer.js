@@ -34,7 +34,8 @@ const SurveyReducer = (state, action) => {
                 survey: action.name,
                 surveyLabel: action.label,
                 questions: action.questions,
-                numberOfPages: Math.ceil(action.questions.length/ parseInt(process.env.REACT_APP_QUESTIONS_PER_PAGE))
+                numberOfPages: Math.ceil(action.questions.length/ parseInt(process.env.REACT_APP_QUESTIONS_PER_PAGE)),
+                identification: action.identification
             }
         case 'RESET_SURVEY':
 
@@ -44,6 +45,7 @@ const SurveyReducer = (state, action) => {
                 surveyLabel: null,
                 questions: [],
                 numberOfPages: null,
+                identification: null,
                 results: []
             }
 

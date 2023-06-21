@@ -12,9 +12,9 @@ export const SurveyProvider = ({ children }) => {
         content: translations.en.content,
         maturityLevels: translations.en.maturityLevels,
         survey: null,
+        identification: null,
         surveyLabel: null,
         questions: [],
-        // numberOfPages:Math.ceil(translations.en.questions.length/questionsPerPage),
         numberOfPages: null,
         questionsPerPage: parseInt(process.env.REACT_APP_QUESTIONS_PER_PAGE),
         results: []
