@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { SurveyProvider } from "./context/SurveyContext";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import Homepage from "./pages/Homepage";
 import About from "./pages/About";
 import Menu from "./components/Menu";
@@ -10,6 +12,7 @@ function App() {
   return (
     <>
       <SurveyProvider>
+      <ToastContainer />
         <Router>
           <Menu />
           <Copyrights/>
