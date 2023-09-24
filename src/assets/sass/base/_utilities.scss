@@ -61,6 +61,10 @@
     box-shadow: $shadow-secondary;
     max-width: 600px;
 }
+.highlight{
+    color: $color-primary;
+    font-weight: 700;
+}
 
 .mg-b-tiny{
     margin-bottom: 0.8rem;
