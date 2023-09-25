@@ -291,6 +291,28 @@
   min-height: 100vh;
   background: #FEFCF3; }
 
+.notFound {
+  position: relative;
+  min-height: 100vh;
+  background: #FEFCF3;
+  max-width: none;
+  width: 100%;
+  position: relative;
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .notFound__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 6.4rem; }
+  .notFound .heading-primary {
+    font-size: 12rem;
+    line-height: 12rem; }
+  .notFound p {
+    font-size: 2rem; }
+
 *,
 *::after,
 *::before {

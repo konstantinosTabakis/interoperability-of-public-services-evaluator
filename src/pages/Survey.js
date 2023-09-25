@@ -14,7 +14,7 @@ function Survey() {
     const [displayQuestions, setDisplayQuestions] = useState([])
 
     useEffect(() => {
-        if(!survey){
+        if (!survey) {
             navigate('/select')
         }
         // eslint-disable-next-line
@@ -69,19 +69,19 @@ function Survey() {
                     content.survey_title
                 )}  </h2>
 
-                    <div className="survey__container-inner">
-                        <div className="mg-b-small">
-                            <PageIndication currentPage={currentPage} numberOfPages={numberOfPages}/>
-                        </div>
-
-                        <InputList questions={displayQuestions} currentPage={currentPage} />
-                        {currentPage === numberOfPages &&
-                            <div className="btn-area mg-t-medium">
-                                <button className="btn btn-primary" onClick={handleSubmit}>{content.survey_cta}</button>
-                            </div>
-                        }
+                <div className="survey__container-inner">
+                    <div className="mg-b-small">
+                        <PageIndication currentPage={currentPage} numberOfPages={numberOfPages} />
                     </div>
-                
+
+                    <InputList questions={displayQuestions} currentPage={currentPage} />
+                    {currentPage === numberOfPages &&
+                        <div className="btn-area mg-t-medium">
+                            <button className="btn btn-primary" onClick={handleSubmit}>{content.survey_cta}</button>
+                        </div>
+                    }
+                </div>
+
             </div>
         </div>
     )

@@ -16,7 +16,7 @@ function Input({ item, currentPage, index }) {
     }, [currentPage])
 
     const handleChange = (e) => {
-        const type = results.filter((itm)=>itm.question ===id).length === 0? 'ADD_RESULT' : 'EDIT_RESULTS'
+        const type = results.filter((itm)=>itm.id ===id).length === 0? 'ADD_RESULT' : 'EDIT_RESULTS'
 
         dispatch({type: type, payload: {
             id: id,
