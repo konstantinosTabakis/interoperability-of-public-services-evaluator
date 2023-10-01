@@ -59,6 +59,7 @@ function SelectSurvey() {
         const survey = surveys.filter((el) => el.id === selectedSurveyId)[0]
         dispatch({
             type: 'SET_SURVEY',
+            id: survey.id,
             name: survey.name,
             label: survey.label,
             questions: survey.questions,

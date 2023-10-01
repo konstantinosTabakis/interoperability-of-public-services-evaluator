@@ -12,6 +12,7 @@ export const SurveyProvider = ({ children }) => {
         content: translations.en.content,
         maturityLevels: translations.en.maturityLevels,
         survey: null,
+        id: null,
         identification: null,
         surveyLabel: null,
         questions: [],

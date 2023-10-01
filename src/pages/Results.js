@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 function Results() {
 
     const navigate = useNavigate()
-    const { results, content, maturityLevels, surveyLabel,survey, identification, dispatch } = useContext(SurveyContext)
+    const { results, content, maturityLevels, surveyLabel,survey, id, identification, dispatch } = useContext(SurveyContext)
     const [total, setTotal] = useState(0)
     const [level, setLevel] = useState({})
     const [isInitialRender, setIsInitialRender] = useState(true);
@@ -21,7 +21,7 @@ function Results() {
                 const { percentage, level } = calcResults(results.map(element => element.result))
                 setTotal(percentage)
                 setLevel(level)
-                await createEvaluation({survey, surveyLabel, percentage, level , identification})
+                await createEvaluation({survey,survey_id: id, surveyLabel, percentage, level , identification})
                 setResults_final(results)
                 dispatch({
                     type: 'RESET_SURVEY'
