@@ -31,6 +31,7 @@ const SurveyReducer = (state, action) => {
 
             return{
                 ...state,
+                id: action.id,
                 survey: action.name,
                 surveyLabel: action.label,
                 questions: action.questions,

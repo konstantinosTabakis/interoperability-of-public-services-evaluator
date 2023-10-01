@@ -8,6 +8,8 @@ import Menu from "./components/Menu";
 import Copyrights from "./components/Copyrights";
 import Survey from "./pages/Survey";
 import Results from "./pages/Results";
+import SelectSurvey from "./pages/SelectSurvey";
+import NotFound from "./pages/NotFound";
 function App() {
   return (
     <>
@@ -21,6 +23,9 @@ function App() {
             <Route path='/about' exact={true} element={<About />}></Route>
             <Route path='/survey' exact={true} element={<Survey />}></Route>
             <Route path='/results' exact={true} element={<Results />}></Route>
+            <Route path='/select' element={<SelectSurvey/>} />
+            <Route path='/select/:id' element={<SelectSurvey/>} />
+            <Route path='/*' element={<NotFound/>} />
           </Routes>
         </Router>
       </SurveyProvider>
