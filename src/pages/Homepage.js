@@ -11,9 +11,9 @@ function Homepage() {
         <div className="homepage">
             <Header/>
             <div className="homepage__content">
-                <h2 className="heading-primary centered mg-b-tiny">
+                <h1 className="heading-primary centered mg-b-tiny">
                 {content.homepage_title}
-                </h2>
+                </h1>
                 <p className="homepage__content-text mg-b-small"> {content.homepage_text}</p>
                 <div className="centered">
                     <Link to='/survey'><button className="btn btn-primary"> {content.homepage_cta}</button></Link>
